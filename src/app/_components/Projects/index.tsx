@@ -6,7 +6,8 @@ const Projects = () => {
       <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <h2 className="mb-6 text-3xl font-bold text-gray-800">Our Projects</h2>
         <p className="mb-8 text-gray-600">
-          Explore some of the amazing projects we've delivered for our clients.
+          Explore some of the amazing projects we&apos;ve delivered for our
+          clients.
         </p>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-lg bg-gray-100 p-6 shadow">

@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 import TextField from "@/components/ui/TextField";
-import { toastError, toastInfo, toastSuccess } from "@/helpers/toast";
+import { toastError, toastSuccess } from "@/helpers/toast";
 import Spinner from "@/components/ui/Spinner";
 
 const ContactForm = () => {
@@ -30,7 +30,7 @@ const ContactForm = () => {
     try {
       await axios.post("/api/sendMessage", data);
       toastSuccess("Submitted successfully");
-    } catch (error) {
+    } catch {
       toastError("Failed to Submit. Try Again!");
     } finally {
       setIsLoading(false);
