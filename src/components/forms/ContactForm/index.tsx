@@ -6,13 +6,15 @@ import TextField from "@/components/ui/TextField";
 import { toastError, toastSuccess } from "@/helpers/toast";
 import Spinner from "@/components/ui/Spinner";
 
+const initalData = {
+  username: "",
+  email: "",
+  address: "",
+  message: "",
+};
+
 const ContactForm = () => {
-  const [data, setData] = useState({
-    username: "",
-    email: "",
-    address: "",
-    message: "",
-  });
+  const [data, setData] = useState(initalData);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (
@@ -30,6 +32,7 @@ const ContactForm = () => {
     try {
       await axios.post("/api/sendMessage", data);
       toastSuccess("Submitted successfully");
+      setData(initalData);
     } catch {
       toastError("Failed to Submit. Try Again!");
     } finally {
